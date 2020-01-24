@@ -36,7 +36,6 @@ namespace JWT.Controllers
             }
         }
 
-
         public static SecurityKey AsymetricSecurityKey()
         {
             var n =

@@ -35,6 +35,12 @@ namespace JWT
                     o.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
 
                 }) //JwtBearerDefaults.AuthenticationScheme)
+
+                //adds more functionality, like caching
+                //.AddIdentityServerAuthentication(o =>
+                //{
+                //    o.TokenRetriever
+                //})
                 .AddJwtBearer(o =>
                 {
                     o.TokenValidationParameters.NameClaimType = "username"; //will map claim username to identity name

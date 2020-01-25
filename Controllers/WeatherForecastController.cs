@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using IdentityServer4.Extensions;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Authorization;
@@ -66,6 +67,13 @@ namespace JWT.Controllers
                 Formatting = Formatting.Indented
 
             });
+        }
+
+        [Route("[action]")]
+        public async Task Signout()
+        {
+            HttpContext.GetIdentityServerBaseUrl();
+           await HttpContext.SignOutAsync();
         }
     }
 }
